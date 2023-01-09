@@ -30,5 +30,6 @@ public class Principal {
                 System.out.println("Enter a number between 1,000 and 1,000,000");
             }
         }
+        scanner.close();
     }
 }

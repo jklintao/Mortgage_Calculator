@@ -30,5 +30,6 @@ public class Interest_Rate {
                 System.out.println("Enter a value greater then 0 and less than or equal to 30.");
             }
         }
+        scanner.close();
     }
 }

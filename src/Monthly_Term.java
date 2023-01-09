@@ -30,6 +30,6 @@ public class Monthly_Term {
                 System.out.println("Enter a value between 1 and 30.");
             }
         }
+        scanner.close();
     }
-
 }
