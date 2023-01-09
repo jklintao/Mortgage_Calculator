@@ -1,40 +1,35 @@
 import java.text.NumberFormat;
 import java.util.Scanner;
 
+
 public class Main {
+
     public static void main(String[] args) {
+
+        final int MIN = 1000;
+        final int MAX = 100_000;
+
         Scanner scanner = new Scanner(System.in);
-        int principal;
-        float aInterest;
-        float mInterest;
-        int years;
-        int months;
-        double Mortgage;
+        Principal principal = new Principal();
+        Interest_Rate interestRate = new Interest_Rate();
+        Monthly_Term monthlyTerm = new Monthly_Term();
+        Mortgage_Calculation mortgageCalculation = new Mortgage_Calculation();
 
-        System.out.print("Principal: ");
-        if(!scanner.hasNextInt()){
-            System.out.println("Invalid Entry. Please Try again.");
+        while (true) {
+            System.out.print("Principal $1K-$1M: ");
+            if (!scanner.hasNextInt()) {
+                System.out.println("Invalid. Try again.");
+                scanner.next();
+            }else {
+                int p = scanner.nextInt();
+                if (p >= MIN && p <= MAX) {
+                    principal.setPrincipal(p);
+                    break;
+                }
+            }
         }
-        principal = scanner.nextInt();
 
-        System.out.print("Annual Interest: ");
-        if(!scanner.hasNextFloat()){
-            System.out.println("Invalid Entry. Please Try again.");
-        }
-        aInterest = scanner.nextFloat();
-        mInterest = aInterest /100/ 12;
 
-        System.out.print("Period(Years): ");
-        if(!scanner.hasNextInt()){
-            System.out.println("Invalid Entry. Please Try again.");
-        }
-        years = scanner.nextInt();
-        months = years * 12;
 
-        double power = Math.pow((1 + mInterest),months);
-
-        Mortgage = (principal*((mInterest*power)/(power-1)));
-
-        System.out.print("Mortgage: " + NumberFormat.getCurrencyInstance().format(Mortgage));
     }
 }
