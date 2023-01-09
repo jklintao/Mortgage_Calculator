@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 public class Monthly_Term {
-    final Scanner scanner = new Scanner(System.in);
-
     private int monthly_term;
 
     final int yMIN = 1;
@@ -16,6 +14,7 @@ public class Monthly_Term {
     }
 
     public void UserInput(){
+        Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("Period(Years): ");
             if (!scanner.hasNextInt()) {
@@ -30,6 +29,5 @@ public class Monthly_Term {
                 System.out.println("Enter a value between 1 and 30.");
             }
         }
-        scanner.close();
     }
 }
